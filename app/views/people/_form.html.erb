@@ -1,0 +1,54 @@
+<%= form_with(model: person) do |form| %>
+  <% if person.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+        <% person.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, person.persisted? ? person.first_name.value : '' %>
+  </div>
+
+  <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, person.persisted? ? person.last_name.value : '' %>
+  </div>
+
+  <div>
+    <%= label_tag :age %>
+    <%= number_field_tag :age, person.persisted? ? person.age.value : '' %>
+  </div>
+
+  <div>
+    <span>Any Pets?</span>
+    <%= label_tag :any_pets_true, 'Yes' %>
+    <%= radio_button_tag :any_pets, true, person.persisted? ? person.any_pets.value : nil %>
+    <%= label_tag :any_pets_false, 'No' %>
+    <%= radio_button_tag :any_pets, false, person.persisted? ? person.any_pets.value : nil %>
+  </div>
+
+  <div>
+    <span>Marital status</span>
+    <%= select_tag :marital_status, options_for_select(MARITAL_STATUS, person.persisted? ? person.marital_status.value : nil) %>
+  </div>
+
+  <div>
+    <span>Favourite food</span>
+
+  </div>
+
+<!--  marital_status-->
+<!--  favourite_food-->
+<!--  skills-->
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

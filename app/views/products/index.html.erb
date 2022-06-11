@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<%= form_with(url: search_products_path, method: :post, data: { controller: 'search-form',
+                                                                turbo_frame: 'products',
+                                                                turbo_action: 'advance' }) do |form| %>
+  <%= form.text_field :query, data: { action: 'input->search-form#search' } %>
+  <%= form.submit 'Search', name: nil %>
+<% end %>
+
+
+<%= render partial: 'products', locals: { products: @products } %>
+
+<%= link_to "New product", new_product_path %>

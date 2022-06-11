@@ -36,17 +36,8 @@
 
   <div>
     <span>Marital status</span>
-    <%= select_tag :marital_status, options_for_select(MARITAL_STATUS, person.persisted? ? person.marital_status.value : nil) %>
+    <%= select_tag :marital_status, options_for_select(Person::MARITAL_STATUS, person.persisted? ? person.marital_status.value : nil) %>
   </div>
-
-  <div>
-    <span>Favourite food</span>
-
-  </div>
-
-<!--  marital_status-->
-<!--  favourite_food-->
-<!--  skills-->
 
   <div>
     <%= form.submit %>

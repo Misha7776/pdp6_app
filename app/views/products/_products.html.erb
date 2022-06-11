@@ -1,3 +1,16 @@
 <%= turbo_frame_tag 'products' do %>
-  <%= render products %>
+  <table style="width: 100%;">
+    <thead>
+    <tr>
+      <th>Mame</th>
+      <th>Quantity</th>
+      <th>Description</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render products, cached: true %>
+    <tbody>
+  </table>
 <% end %>

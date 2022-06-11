@@ -1,0 +1,9 @@
+<tr id="<%= post.id %>">
+  <td><%= post.author %></td>
+  <td><%= post.title %></td>
+  <td><%= post.body %></td>
+  <td><%= post.tags %></td>
+  <td><%= post.published %></td>
+  <td><%= post.published_on %></td>
+  <td><%= link_to 'View', post_path(post.id) %></td>
+</tr>

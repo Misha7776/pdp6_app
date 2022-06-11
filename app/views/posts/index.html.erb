@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= form_with(url: search_posts_path, method: :post, data: { controller: 'search-form',
+                                                             turbo_frame: 'posts',
+                                                             turbo_action: 'advance' }) do |form| %>
+  <%= form.text_field :query, data: { action: 'input->search-form#search' } %>
+  <div class="form-group">
+    <%= form.label :published %>
+    <%= form.check_box 'filters[published]' %>
+  </div>
+  <%= form.submit 'Search', name: nil %>
+<% end %>
+
+<%= render partial: 'posts', locals: { posts: @posts } %>
+
+<%= link_to "New product", new_product_path %>

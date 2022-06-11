@@ -1,0 +1,20 @@
+<%= turbo_frame_tag 'posts' do %>
+  <table style="width: 100%;">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Tags</th>
+        <th>Published</th>
+        <th>Published on</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.each do |post| %>
+        <%= render partial: 'post', locals: { post: post } %>
+      <% end %>
+    <tbody>
+  </table>
+<% end %>

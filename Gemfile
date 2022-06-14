@@ -54,6 +54,7 @@ gem 'bootsnap', require: false
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'actionpack-action_caching'
+gem 'scenic'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

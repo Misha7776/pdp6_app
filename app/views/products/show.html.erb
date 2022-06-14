@@ -1,6 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+<table style="width: 100%;">
+  <thead>
+  <tr>
+    <th>Mame</th>
+    <th>Quantity</th>
+    <th>Description</th>
+    <th>Created At</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render @product %>
+  <tbody>
+</table>
 
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |

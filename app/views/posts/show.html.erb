@@ -1,6 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<table style="width: 100%;">
+  <thead>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Tags</th>
+    <th>Published</th>
+    <th>Published on</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render @post %>
+  <tbody>
+</table>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |

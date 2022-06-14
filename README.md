@@ -17,7 +17,12 @@
   * You can check elasticsearch on http://localhost:9200/
   * You can check Kabana on http://localhost:5601/app/home
   * Working model `Post`. Seed the db with records and run `Post.import`
-    
+  
+* DB Views
+  * Materialized view - `DbStatistic.all`
+  * To refresh the view run: `DbStatistic.all`
+
+
 ## Project Setup
 * Run this commands
 * ``bundle install``
